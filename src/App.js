@@ -74,7 +74,7 @@ function App() {
           <div className="form-result-row">
             <form className="sizing-form symmetrical-form" onSubmit={handleSubmit}>
               <label>
-                Noseband (in):
+                Overall Noseband (in):
                 <input
                   type="number"
                   step="0.5"
