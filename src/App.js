@@ -38,14 +38,14 @@ function App() {
   };
 
   return (
-    <div className="App compact-app">
-      <h1 className="compact-title">Knotty Girlz Halter Sizing Calculator</h1>
-      <div className="compact-flex-row">
-        <div className="compact-left">
-          <div className="video-container compact-video">
+    <div className="App symmetrical-app">
+      <h1 className="symmetrical-title">Knotty Girlz Halter Sizing Calculator</h1>
+      <div className="symmetrical-flex-row">
+        <div className="symmetrical-col symmetrical-left">
+          <div className="video-container symmetrical-video">
             <iframe
-              width="280"
-              height="158"
+              width="420"
+              height="236"
               src="https://www.youtube.com/embed/av7FoRSjH80"
               title="YouTube video"
               frameBorder="0"
@@ -53,26 +53,26 @@ function App() {
               allowFullScreen
             ></iframe>
           </div>
-          <div className="halter-diagram compact-diagram">
+          <div className="halter-diagram symmetrical-diagram">
             <img
               src="/halter-diagram.jpg"
               alt="Diagram of horse halter parts"
-              style={{ maxWidth: '180px', height: 'auto', marginTop: '1rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}
+              className="symmetrical-img"
             />
           </div>
         </div>
-        <div className="compact-right">
-          <div className="instructions compact-instructions">
+        <div className="symmetrical-col symmetrical-right">
+          <div className="instructions symmetrical-instructions">
             <h2 className="instructions-header">How to Measure</h2>
-            <ul className="compact-list">
+            <ul className="symmetrical-list">
               <li>Measure around your horse's nose, just below the cheekbone.</li>
               <li>Measure from just below the cheekbone to just behind the ear (cheek piece).</li>
               <li>Enter both numbers below for a size recommendation.</li>
             </ul>
-            <div className="compact-note">Custom halters available if you're between sizes!</div>
+            <div className="symmetrical-note">Custom halters available if you're between sizes!</div>
           </div>
-          {result && <div className="result compact-result">{result}</div>}
-          <form className="sizing-form compact-form" onSubmit={handleSubmit}>
+          {result && <div className="result symmetrical-result">{result}</div>}
+          <form className="sizing-form symmetrical-form" onSubmit={handleSubmit}>
             <label>
               Noseband (in):
               <input
