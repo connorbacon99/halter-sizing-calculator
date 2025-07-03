@@ -531,6 +531,12 @@ h1 {
   .symmetrical-form label {
     font-size: 0.97rem;
     margin-bottom: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 0;
+    padding-left: 0;
   }
   .symmetrical-form input {
     width: 100px;

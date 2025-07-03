@@ -42,17 +42,6 @@ function App() {
       <h1 className="symmetrical-title">Knotty Girlz Halter Sizing Calculator</h1>
       <div className="symmetrical-flex-row">
         <div className="symmetrical-col symmetrical-left">
-          <div className="video-container symmetrical-video">
-            <iframe
-              width="420"
-              height="236"
-              src="https://www.youtube.com/embed/av7FoRSjH80"
-              title="YouTube video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
           <div className="halter-diagram symmetrical-diagram desktop-img">
             <img
               src="/halter-diagram.jpg"
