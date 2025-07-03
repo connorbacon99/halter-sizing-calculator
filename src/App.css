@@ -408,11 +408,12 @@ h1 {
   padding: 0;
   font-size: 1.08rem;
   color: #111;
+  font-weight: 400;
 }
 
 .symmetrical-note {
   font-size: 1.02rem;
-  color: #888;
+  color: #111;
   margin-top: 0.6rem;
 }
 
@@ -478,7 +479,7 @@ h1 {
 
 .result-square {
   min-width: 180px;
-  min-height: 120px;
+  min-height: 180px;
   max-width: 220px;
   display: flex;
   align-items: center;
@@ -493,4 +494,5 @@ h1 {
   margin-left: 0;
   text-align: center;
   padding: 1.2rem 1rem;
+  align-self: flex-start;
 }
