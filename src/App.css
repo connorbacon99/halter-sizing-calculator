@@ -549,6 +549,9 @@ h1 {
   .symmetrical-list {
     font-size: 0.97rem;
   }
+  .symmetrical-video {
+    display: none !important;
+  }
 }
 
 .desktop-img {
