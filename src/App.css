@@ -539,9 +539,9 @@ h1 {
     padding-left: 0;
   }
   .symmetrical-form input {
-    width: 100px;
-    font-size: 0.97rem;
-    padding: 0.25rem;
+    width: 140px;
+    font-size: 1.15rem;
+    padding: 0.35rem;
     margin-top: 0.1rem;
   }
   .symmetrical-form button {
