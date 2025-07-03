@@ -517,11 +517,15 @@ h1 {
     align-items: center;
   }
   .symmetrical-video {
-    width: 100% !important;
-    max-width: 100vw;
-    height: auto !important;
-    aspect-ratio: 16/9;
-    min-width: 0;
+    display: none !important;
+  }
+  .desktop-img {
+    display: none !important;
+  }
+  .mobile-img {
+    display: block !important;
+    width: 100%;
+    margin-top: 1.5rem;
   }
   .symmetrical-img {
     max-width: 95vw;
@@ -554,4 +558,11 @@ h1 {
     font-size: 1.3rem;
     margin: 1.2rem 0 1rem 0;
   }
+}
+
+.desktop-img {
+  display: block;
+}
+.mobile-img {
+  display: none;
 }

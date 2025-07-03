@@ -53,7 +53,7 @@ function App() {
               allowFullScreen
             ></iframe>
           </div>
-          <div className="halter-diagram symmetrical-diagram">
+          <div className="halter-diagram symmetrical-diagram desktop-img">
             <img
               src="/halter-diagram.jpg"
               alt="Diagram of horse halter parts"
@@ -98,6 +98,13 @@ function App() {
             {result && (
               <div className="result symmetrical-result result-square">{result}</div>
             )}
+          </div>
+          <div className="halter-diagram symmetrical-diagram mobile-img">
+            <img
+              src="/halter-diagram.jpg"
+              alt="Diagram of horse halter parts"
+              className="symmetrical-img"
+            />
           </div>
         </div>
       </div>
