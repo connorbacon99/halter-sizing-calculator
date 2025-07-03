@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const SIZING_CHART = [
@@ -21,6 +21,18 @@ function findBestSize(noseband, cheek) {
 }
 
 function App() {
+  useEffect(() => {
+    function sendHeight() {
+      window.parent.postMessage(
+        { type: 'setHeight', height: document.body.scrollHeight },
+        '*'
+      );
+    }
+    sendHeight();
+    window.addEventListener('resize', sendHeight);
+    return () => window.removeEventListener('resize', sendHeight);
+  }, []);
+
   const [noseband, setNoseband] = useState('');
   const [cheek, setCheek] = useState('');
   const [result, setResult] = useState(null);
