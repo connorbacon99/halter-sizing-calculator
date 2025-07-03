@@ -15,7 +15,7 @@ const SIZING_CHART = [
 ];
 
 function findBestSize(noseband, cheek) {
-  // Only return a size if both values exactly match a row in the chart
+  // Only return a size if both values exactly match a row in the chart.
   const match = SIZING_CHART.find(row => row.noseband === noseband && row.cheek === cheek);
   return match ? match.size : null;
 }
