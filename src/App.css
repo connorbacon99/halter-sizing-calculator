@@ -176,3 +176,129 @@ h1 {
   margin: 1.5rem auto 0.5rem auto;
   text-align: left;
 }
+
+.compact-app {
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.compact-title {
+  font-size: 1.7rem;
+  margin: 1.2rem 0 0.7rem 0;
+  color: #4EA5A9;
+}
+
+.compact-flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.compact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.compact-video {
+  width: 280px;
+  height: 158px;
+  margin: 0;
+}
+
+.compact-diagram {
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+}
+
+.compact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 260px;
+  max-width: 340px;
+}
+
+.compact-instructions {
+  background: #f8f6f2;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  font-size: 1rem;
+  color: #4a3c1a;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.7rem;
+  width: 100%;
+}
+
+.compact-list {
+  margin: 0 0 0.5rem 1.1rem;
+  padding: 0;
+  font-size: 0.98rem;
+}
+
+.compact-note {
+  font-size: 0.93rem;
+  color: #888;
+  margin-top: 0.3rem;
+}
+
+.compact-form {
+  gap: 0.7rem;
+  margin: 0.5rem 0 0 0;
+  width: 100%;
+}
+
+.compact-form label {
+  font-size: 1rem;
+  color: #444;
+}
+
+.compact-form input {
+  width: 120px;
+  font-size: 1rem;
+  padding: 0.3rem;
+}
+
+.compact-form button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  background: #4EA5A9;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.compact-form button:hover {
+  background: #35787a;
+}
+
+.compact-result {
+  margin: 0.7rem 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff914d;
+  background: #f8f6f2;
+  border-radius: 6px;
+  max-width: 320px;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 2px 8px rgba(255,145,77,0.07);
+  letter-spacing: 0.5px;
+  text-align: center;
+}

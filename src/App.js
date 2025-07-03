@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const SIZING_CHART = [
@@ -25,27 +25,8 @@ function App() {
   const [cheek, setCheek] = useState('');
   const [result, setResult] = useState(null);
 
-  useEffect(() => {
-    function sendHeight() {
-      window.parent.postMessage(
-        { type: 'setHeight', height: document.documentElement.scrollHeight },
-        '*'
-      );
-    }
-    sendHeight();
-    window.addEventListener('resize', sendHeight);
-    // Also send height when images load
-    const images = document.querySelectorAll('img');
-    images.forEach(img => img.addEventListener('load', sendHeight));
-    return () => {
-      window.removeEventListener('resize', sendHeight);
-      images.forEach(img => img.removeEventListener('load', sendHeight));
-    };
-  }, [result]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add 2 inches to the noseband input for sizing
     const nb = parseFloat(noseband) + 2;
     const ch = parseFloat(cheek);
     if (isNaN(nb) || isNaN(ch)) {
@@ -57,57 +38,64 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Knotty Girlz Halter Sizing Calculator</h1>
-      <div className="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/av7FoRSjH80"
-          title="YouTube video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-      <div className="instructions">
-        <h2 className="instructions-header">Instructions:</h2>
-        <p>To size your horse's halter, you'll need two measurements: the noseband and the cheek piece.</p>
-        <p>For the noseband, measure around your horse's nose, above the soft part and below the cheekbone. For the cheek piece, measure from just below the cheekbone to just behind the ear.</p>
-        <p>Input these numbers into the calculator below, and it will give you a recommendation on sizing.</p>
-        <p>If you're between sizes, we can create a custom halter for you!</p>
-      </div>
-      {result && <div className="result">{result}</div>}
-      <h2 className="instructions-header" style={{ marginTop: '2.5rem', textAlign: 'center' }}>Enter your measurements below:</h2>
-      <form className="sizing-form" onSubmit={handleSubmit}>
-        <label>
-          Overall Noseband (inches):
-          <input
-            type="number"
-            step="0.5"
-            value={noseband}
-            onChange={e => setNoseband(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Cheek (inches):
-          <input
-            type="number"
-            step="0.5"
-            value={cheek}
-            onChange={e => setCheek(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Find My Size</button>
-      </form>
-      <div className="halter-diagram">
-        <img
-          src="/halter-diagram.jpg"
-          alt="Diagram of horse halter parts"
-          style={{ maxWidth: '100%', height: 'auto', marginTop: '2rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}
-        />
+    <div className="App compact-app">
+      <h1 className="compact-title">Knotty Girlz Halter Sizing Calculator</h1>
+      <div className="compact-flex-row">
+        <div className="compact-left">
+          <div className="video-container compact-video">
+            <iframe
+              width="280"
+              height="158"
+              src="https://www.youtube.com/embed/av7FoRSjH80"
+              title="YouTube video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="halter-diagram compact-diagram">
+            <img
+              src="/halter-diagram.jpg"
+              alt="Diagram of horse halter parts"
+              style={{ maxWidth: '180px', height: 'auto', marginTop: '1rem', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.07)' }}
+            />
+          </div>
+        </div>
+        <div className="compact-right">
+          <div className="instructions compact-instructions">
+            <h2 className="instructions-header">How to Measure</h2>
+            <ul className="compact-list">
+              <li>Measure around your horse's nose, just below the cheekbone.</li>
+              <li>Measure from just below the cheekbone to just behind the ear (cheek piece).</li>
+              <li>Enter both numbers below for a size recommendation.</li>
+            </ul>
+            <div className="compact-note">Custom halters available if you're between sizes!</div>
+          </div>
+          {result && <div className="result compact-result">{result}</div>}
+          <form className="sizing-form compact-form" onSubmit={handleSubmit}>
+            <label>
+              Noseband (in):
+              <input
+                type="number"
+                step="0.5"
+                value={noseband}
+                onChange={e => setNoseband(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+              Cheek (in):
+              <input
+                type="number"
+                step="0.5"
+                value={cheek}
+                onChange={e => setCheek(e.target.value)}
+                required
+              />
+            </label>
+            <button type="submit">Find My Size</button>
+          </form>
+        </div>
       </div>
     </div>
   );
