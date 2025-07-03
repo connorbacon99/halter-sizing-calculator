@@ -65,36 +65,40 @@ function App() {
           <div className="instructions symmetrical-instructions">
             <h2 className="instructions-header">How to Measure</h2>
             <ul className="symmetrical-list">
-              <li>Measure around your horse's nose, just below the cheekbone.</li>
+              <li>Measure around your horse's nose, just below the cheekbone <b>and above the soft tissue on the nose</b>.</li>
               <li>Measure from just below the cheekbone to just behind the ear (cheek piece).</li>
               <li>Enter both numbers below for a size recommendation.</li>
             </ul>
             <div className="symmetrical-note">Custom halters available if you're between sizes!</div>
           </div>
-          {result && <div className="result symmetrical-result">{result}</div>}
-          <form className="sizing-form symmetrical-form" onSubmit={handleSubmit}>
-            <label>
-              Noseband (in):
-              <input
-                type="number"
-                step="0.5"
-                value={noseband}
-                onChange={e => setNoseband(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Cheek (in):
-              <input
-                type="number"
-                step="0.5"
-                value={cheek}
-                onChange={e => setCheek(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit">Find My Size</button>
-          </form>
+          <div className="form-result-row">
+            <form className="sizing-form symmetrical-form" onSubmit={handleSubmit}>
+              <label>
+                Noseband (in):
+                <input
+                  type="number"
+                  step="0.5"
+                  value={noseband}
+                  onChange={e => setNoseband(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Cheek (in):
+                <input
+                  type="number"
+                  step="0.5"
+                  value={cheek}
+                  onChange={e => setCheek(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit">Find My Size</button>
+            </form>
+            {result && (
+              <div className="result symmetrical-result result-square">{result}</div>
+            )}
+          </div>
         </div>
       </div>
     </div>
