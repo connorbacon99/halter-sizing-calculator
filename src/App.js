@@ -30,10 +30,8 @@ function App() {
     }
     sendHeight();
     window.addEventListener('resize', sendHeight);
-
-    // Send height when the result changes (after form submit)
     return () => window.removeEventListener('resize', sendHeight);
-  }, [result]);
+  }, []);
 
   const [noseband, setNoseband] = useState('');
   const [cheek, setCheek] = useState('');
