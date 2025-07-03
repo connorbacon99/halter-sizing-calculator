@@ -21,6 +21,10 @@ function findBestSize(noseband, cheek) {
 }
 
 function App() {
+  const [noseband, setNoseband] = useState('');
+  const [cheek, setCheek] = useState('');
+  const [result, setResult] = useState(null);
+
   useEffect(() => {
     function sendHeight() {
       window.parent.postMessage(
@@ -38,10 +42,6 @@ function App() {
       images.forEach(img => img.removeEventListener('load', sendHeight));
     };
   }, [result]);
-
-  const [noseband, setNoseband] = useState('');
-  const [cheek, setCheek] = useState('');
-  const [result, setResult] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
