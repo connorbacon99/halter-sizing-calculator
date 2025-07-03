@@ -24,14 +24,20 @@ function App() {
   useEffect(() => {
     function sendHeight() {
       window.parent.postMessage(
-        { type: 'setHeight', height: document.body.scrollHeight },
+        { type: 'setHeight', height: document.documentElement.scrollHeight },
         '*'
       );
     }
     sendHeight();
     window.addEventListener('resize', sendHeight);
-    return () => window.removeEventListener('resize', sendHeight);
-  }, []);
+    // Also send height when images load
+    const images = document.querySelectorAll('img');
+    images.forEach(img => img.addEventListener('load', sendHeight));
+    return () => {
+      window.removeEventListener('resize', sendHeight);
+      images.forEach(img => img.removeEventListener('load', sendHeight));
+    };
+  }, [result]);
 
   const [noseband, setNoseband] = useState('');
   const [cheek, setCheek] = useState('');
