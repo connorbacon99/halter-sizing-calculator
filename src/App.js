@@ -58,7 +58,7 @@ function App() {
               <li>Measure from just below the cheekbone to just behind the ear (cheek piece).</li>
               <li>Enter both numbers below for a size recommendation.</li>
             </ul>
-            <div className="symmetrical-note">Custom halters available if you're between sizes!</div>
+            <div className="symmetrical-note">Please contact us for custom sizing if you're between sizes.</div>
           </div>
           <div className="form-result-row">
             <form className="sizing-form symmetrical-form" onSubmit={handleSubmit}>
